@@ -2,7 +2,7 @@
 
 ## Supplier
 
-### Supplier<T>
+### Supplier\<T\>
 
 * Represents a function that takes no arguments and returns a result of type `T`.
 
@@ -74,7 +74,7 @@ boolean result = isEven.getAsBoolean();
 
 ## Predicate
 
-### Predicate<T>
+### Predicate\<T\>
 
 * Represents a function that takes a single argument of type `T` and returns a `boolean`.
 * Chaining Methods:
@@ -99,7 +99,7 @@ Predicate<String> isShort = str -> str.length() < 10;
 boolean result = isNotEmpty.and(isShort).test("Hello");
 ```
 
-### BiPredicate<T, U>
+### BiPredicate\<T, U\>
 
 * Represents a function that takes two arguments of types `T` and `U`, and returns a `boolean`.
 * Chaining Methods:
@@ -201,7 +201,7 @@ boolean result = isGreaterThanZero.and(isLessThanTen).test(5.5);
 
 ## Consumer
 
-### Consumer<T>
+### Consumer\<T\>
 
 * Represents a function that takes a single argument of type `T` and returns no result.
 * Chaining Methods:
@@ -222,7 +222,7 @@ Consumer<String> upperCasePrint = str -> System.out.println(str.toUpperCase());
 print.andThen(upperCasePrint).accept("hello");
 ```
 
-### BiConsumer<T, U>
+### BiConsumer\<T, U\>
 
 * Represents a function that takes two arguments of type `T` and `U` and returns no result.
 * Chaining Methods:
@@ -294,7 +294,7 @@ DoubleConsumer print = d -> System.out.println(d);
 print.accept(3.14);
 ```
 
-### ObjIntConsumer<T>
+### ObjIntConsumer\<T\>
 
 * Represents a consumer that accepts an object of type `T` and an `int` and returns no result.
 
@@ -308,7 +308,7 @@ ObjIntConsumer<String> printLength = (str, length) -> System.out.println(str + "
 printLength.accept("Hello", 5);
 ```
 
-### ObjLongConsumer<T>
+### ObjLongConsumer\<T\>
 
 * Represents a consumer that accepts an object of type `T` and a `long` and returns no result.
 
@@ -322,7 +322,7 @@ ObjLongConsumer<String> printLength = (str, length) -> System.out.println(str + 
 printLength.accept("Hello", 5L);
 ```
 
-### ObjDoubleConsumer<T>
+### ObjDoubleConsumer\<T\>
 
 * Represents a consumer that accepts an object of type `T` and a `double` and returns no result.
 
@@ -338,7 +338,7 @@ printLength.accept("Hello", 5.5);
 
 ## Function
 
-### Function<T, R>
+### Function\<T, R\>
 
 * Represents a function that takes an argument of type `T` and returns a result of type `R`.
 * Chaining Methods:
@@ -361,7 +361,7 @@ Function<Integer, String> intToString = i -> "Length: " + i;
 String result = stringLength.andThen(intToString).apply("Hello");
 ```
 
-### UnaryOperator<T>
+### UnaryOperator\<T\>
 
 * A special case of `Function<T, T>`, which represents a function that takes an argument of type `T` and returns a result of the same type `T`.
 * Chaining Methods:
@@ -388,7 +388,7 @@ UnaryOperator<Integer> addFive = x -> x + 5;
 int result = doubleValue.andThen(addFive).apply(3);
 ```
 
-### BiFunction<T, U, R>
+### BiFunction\<T, U, R\>
 
 * Represents a function that takes two arguments of types `T` and `U`, and returns a result of type `R`.
 * Chaining Methods:
@@ -411,7 +411,7 @@ BiFunction<String, Integer, String> prefix = (str, times) -> "Repeated: " + str;
 String result = repeat.andThen(prefix).apply("Hello", 3);
 ```
 
-### BinaryOperator<T>
+### BinaryOperator\<T\>
 
 * A special case of `BiFunction<T, T, T>`, which represents a function that takes two arguments of type `T` and returns a result of the same type `T`.
 * Chaining Methods:
@@ -436,7 +436,7 @@ BinaryOperator<Integer> multiply = (a, b) -> a * b;
 int result = add.andThen(multiply).apply(2, 3);
 ```
 
-### IntFunction<R>
+### IntFunction\<R\>
 
 * Represents a function that takes an `int` and returns a result of type `R`.
 
@@ -450,7 +450,7 @@ IntFunction<String> intToString = i -> "Number: " + i;
 String result = intToString.apply(10);
 ```
 
-### LongFunction<R>
+### LongFunction\<R\>
 
 * Represents a function that takes a `long` and returns a result of type `R`.
 
@@ -464,7 +464,7 @@ LongFunction<String> longToString = l -> "Long: " + l;
 String result = longToString.apply(100L);
 ```
 
-### DoubleFunction<R>
+### DoubleFunction\<R\>
 
 * Represents a function that takes a `double` and returns a result of type `R`.
 
@@ -478,7 +478,7 @@ DoubleFunction<String> doubleToString = d -> "Double: " + d;
 String result = doubleToString.apply(3.14);
 ```
 
-### ToIntFunction<T>
+### ToIntFunction\<T\>
 
 * Represents a function that takes an argument of type `T` and returns an `int`.
 
@@ -492,7 +492,7 @@ ToIntFunction<String> stringToInt = str -> str.length();
 int result = stringToInt.applyAsInt("Hello");
 ```
 
-### ToLongFunction<T>
+### ToLongFunction\<T\>
 
 * Represents a function that takes an argument of type `T` and returns a `long`.
 
@@ -506,7 +506,7 @@ ToLongFunction<String> stringToLong = str -> str.length();
 long result = stringToLong.applyAsLong("Hello");
 ```
 
-### ToDoubleFunction<T>
+### ToDoubleFunction\<T\>
 
 * Represents a function that takes an argument of type `T` and returns a `double`.
 
@@ -520,7 +520,7 @@ ToDoubleFunction<String> stringToDouble = str -> str.length() * 1.5;
 double result = stringToDouble.applyAsDouble("Hello");
 ```
 
-### ToIntBiFunction<T, U>
+### ToIntBiFunction\<T, U\>
 
 * Represents a function that takes two arguments of types `T` and `U` and produces an `int` result.
 
@@ -534,7 +534,7 @@ ToIntBiFunction<String, String> stringLengthDifference = (str1, str2) -> str1.le
 int result = stringLengthDifference.applyAsInt("Hello", "World");
 ```
 
-### ToLongBiFunction<T, U>
+### ToLongBiFunction\<T, U\>
 
 * Represents a function that takes two arguments of types `T` and `U` and produces an `long` result.
 
@@ -548,7 +548,7 @@ ToLongBiFunction<String, Integer> multiplyLengthByFactor = (str, factor) -> str.
 long result = multiplyLengthByFactor.applyAsLong("Hello", 1000);
 ```
 
-### ToDoubleBiFunction<T, U>
+### ToDoubleBiFunction\<T, U\>
 
 * Represents a function that takes two arguments of types `T` and `U` and produces an `double` result.
 
